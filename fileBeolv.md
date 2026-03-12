@@ -481,6 +481,11 @@ comparator tipus
 keszits egy kor alapjan rendezo oszt
 eloszor oszt, ami megval a rendezési logikat, aztan fel kell haszn
 
+import java.text.Collator;
+import java.util.Comparator;
+
+public class EmberCimRendezo implements Comparator
+
 
 
 

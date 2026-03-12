@@ -1,0 +1,5 @@
+név,kor,cím
+Béla,22,Budapest
+Anna,11,Érd
+Géza,44,Pécs
+Edit,19,Budapest

@@ -20,6 +20,35 @@ public class Main {
         System.out.println("===== Emberek =====");
         emberek.forEach(System.out::println);
 
+
+
+        List<Ember> kevert = listaKeverese(emberek);
+
+        System.out.println("Keverve:");
+        kevert.forEach(System.out::println);
+
+
+
+
+        // --- 1. feladat: hány azonos ember van?
+        int azonosDarab = FileMuveletek.hanyAzonosEmberVan(emberek);
+        System.out.println("\n===== Hány azonos ember szerepel a listában? =====");
+        System.out.println(azonosDarab + " db azonos ember található a listában.");
+
+        // --- 2. feladat: mely emberek szerepelnek többször?
+        List<Ember> tobbszor = FileMuveletek.tobbszorSzereplok(emberek);
+        System.out.println("\n===== Többször szereplő emberek =====");
+
+        if (tobbszor.isEmpty()) {
+            System.out.println("Nincs olyan ember, aki többször szerepel.");
+        } else {
+            tobbszor.forEach(e ->
+                    System.out.println(e.getNev() + " (" + e.getKor() + ") - " + e.getCim())
+            );
+        }
+
+
+
     /*
         // ---- PROGRAMOZÁSI TÉTELEK ----
 

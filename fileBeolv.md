@@ -469,16 +469,17 @@ jegyzet:
 kif
 
 public class Ember implements Comparable<Ember>	//generikus kell
-
-
-
 public int compareTo(Ember masik)
+Collections.sort(emberek)
+for(Ember ember:emberek)
+comparator tipus
 
 
 
 
 
-
+keszits egy kor alapjan rendezo oszt
+eloszor oszt, ami megval a rendezési logikat, aztan fel kell haszn
 
 
 

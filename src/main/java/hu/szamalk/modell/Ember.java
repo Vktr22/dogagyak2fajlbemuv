@@ -20,4 +20,19 @@ public class Ember implements Comparable{
         return nev + " (" + kor + ") - " + cim;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ember)) return false;
+        Ember ember = (Ember) o;
+        return kor == ember.kor &&
+                Objects.equals(nev, ember.nev) &&
+                Objects.equals(cim, ember.cim);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nev, kor, cim);
+    }
+
 }

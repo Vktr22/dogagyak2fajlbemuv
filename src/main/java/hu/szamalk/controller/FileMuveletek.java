@@ -67,4 +67,51 @@ public class FileMuveletek {
         Collections.sort(emberek);
     }
 
+    public static <T> List<T> listaKeverese(List<T> eredeti) {
+        List<T> masolat = new ArrayList<>(eredeti); // ne módosítsuk az eredetit
+        Collections.shuffle(masolat);
+        return masolat;
+    }
+
+    //feladat:
+    //hany azonos ember (minden adattagjaban megegyezo) van a listaban:
+    public static int hanyAzonosEmberVan(List<Ember> lista) {
+        Map<Ember, Integer> szamlalo = new HashMap<>();
+
+        for (Ember e : lista) {
+            szamlalo.put(e, szamlalo.getOrDefault(e, 0) + 1);
+        }
+
+        int osszesDupla = 0;
+        for (Integer db : szamlalo.values()) {
+            if (db > 1) {
+                osszesDupla += db;
+            }
+        }
+
+        return osszesDupla;
+    }
+
+    //feladat:
+    //adjuk vissza azokat akik tobbszor szerepelnek:
+    public static List<Ember> tobbszorSzereplok(List<Ember> lista) {
+        Map<Ember, Integer> szamlalo = new HashMap<>();
+
+        for (Ember e : lista) {
+            szamlalo.put(e, szamlalo.getOrDefault(e, 0) + 1);
+        }
+
+        List<Ember> eredmeny = new ArrayList<>();
+        for (Map.Entry<Ember, Integer> entry : szamlalo.entrySet()) {
+            if (entry.getValue() > 1) {
+                eredmeny.add(entry.getKey());
+            }
+        }
+
+        return eredmeny;
+    }
+
+
+
+
 }
